@@ -1,0 +1,66 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+
+//FUNCTION TO CHECK IF THE PARENTHESES ARE BALANCED 
+bool are_Paranthesis_Balanced(string str)
+{
+    stack<char> s;
+    char x;
+
+    //TRAVERSING THE WHOLE STRING
+    for(int i = 0; i<str.length(); i++)
+    {
+        if(str[i] == '(' || str[i] == '[' || str[i] == '{')
+            {
+                s.push(str[i]);
+                continue;
+            }
+            
+       /* IF CURRENT CHARACTER IS NOT AN OPENING BRACKET, 
+        THEN IT MUST BE CLOSING PARENTHESES. 
+        SO THE STACK SHOULD NOT BE EMPTY.*/
+        if(s.empty())
+            return false;
+
+        switch(str[i])
+        {
+        case ')':
+            x = s.top();
+            s.pop();
+            if(x == '{' && x == '[')
+                return false;
+            break;
+
+        case '}':
+            x = s.top();
+            s.pop();
+            if(x == '(' && x == '[')
+                return false;
+            break;
+        case ']':
+
+			x = s.top();
+			s.pop();
+			if (x =='(' || x == '{')
+				return false;
+			break;
+
+        default: continue;
+        }
+    }
+    return(s.empty());
+}
+
+int main()
+{
+
+    string str;
+    getline(cin,str);
+    
+     if (are_Paranthesis_Balanced(str))
+        cout << "Balanced";
+    else
+        cout << "Not Balanced";
+    return 0;
+}
