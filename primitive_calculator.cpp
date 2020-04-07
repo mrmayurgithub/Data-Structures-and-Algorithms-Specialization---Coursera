@@ -1,3 +1,9 @@
+/*You are given a primitive calculator that can perform the following three operations with
+the current number x: multiply x by 2, multiply x by 3, or add 1 to x. Your goal is given a
+positive integer n, find the minimum number of operations needed to obtain the number n
+starting from the number 1.*/
+
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
