@@ -20,9 +20,9 @@ int minimum(int d1,int d2,int d3)
 }
 
 int moneychange(int n)
-{      
-        //If minimum number of coins needed to exchange n is already    
-       //stored in the vector      
+{
+        //If minimum number of coins needed to exchange n is already
+       //stored in the vector
 	if(n<v.size())
 	 return v[n];
 
@@ -47,14 +47,13 @@ int main()
 	int n;
 	cin>>n;
 
-        //Number of coins needed to give an exchange of 0, 1 and 2. 
+        //Number of coins needed to give an exchange of 0, 1 and 2.
 	v.push_back(0);
         v.push_back(1);
         v.push_back(2);
-	
+
         int x = moneychange(n);
-	cout<<endl;
-	cout<<endl<<<<"Number of coins - "<<x;
+	
+	cout<<endl<<"Number of coins - "<<x;
 	return 0;
 }
-
